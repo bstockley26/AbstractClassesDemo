@@ -14,7 +14,8 @@ namespace ConsoleUI
              * Todo: Follow all comments!! 
              * Double click on the region (gray box) to view all comments
              */
-
+            
+            
             #region Vehicles
 
             /*
@@ -47,8 +48,60 @@ namespace ConsoleUI
 
             // Call each of the drive methods for one car and one motorcycle
 
-            #endregion            
-            Console.ReadLine();
+            #endregion
+
+            
+            var carOne = new Car()
+            {
+                Make = "porsche",
+                Model = "911 turbo",
+                YearMade = "1980",
+                DoorAmount = "2 door"
+            };
+            
+
+            
+            
+            
+
+            Vehicle harleyDavidson = new Motorcycle()
+            {
+                Make = "Harley Davidson",
+                Model = "Breakout",
+                YearMade = "2024",
+                HasSidecar = "No"
+
+            };
+            
+            
+            
+
+            Vehicle carTwo = new Car()
+            {
+                Make = "Toyota",
+                Model = "4runner",
+                YearMade = "2021",
+                DoorAmount = "4 door"
+            };
+
+            Vehicle carThree = new Car()
+            {
+                Make = "BMW",
+                Model = "550i",
+                YearMade = "2010",
+                DoorAmount = "4 door"
+            };
+
+            var vehicles = new List<Vehicle> { carOne, harleyDavidson, carTwo, carThree };
+            foreach (var vehicle in vehicles)
+            {
+                Console.WriteLine($"{vehicle.Make}, {vehicle.Model}, {vehicle.YearMade}");
+            }
+            harleyDavidson.DriveAbstractColor();
+            harleyDavidson.DriveVirtualGasType();
+
+            carOne.DriveAbstractColor();
+            carOne.DriveVirtualGasType();
         }
     }
 }
